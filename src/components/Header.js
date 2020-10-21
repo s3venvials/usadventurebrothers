@@ -1,40 +1,38 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import YouTubeIcon from '@material-ui/icons/YouTube';
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
+    textAlign: "center",
+    marginTop: "1em"
   },
 }));
 
-export default function Header() {
+export default () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar variant="dense">
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
+    <Container className={classes.root}>
+      <Grid container>
+        <Grid item lg={4}></Grid>
+        <Grid item lg={4}>
+        <Typography variant="h5" style={{ lineHeight: "2.534" }}>U.S Adventure Brothers</Typography>
+        </Grid>
+        <Grid item lg={4}>
+          <IconButton>
+            <YouTubeIcon fontSize="large" style={{ color: "red" }} />
           </IconButton>
-          <Typography variant="h6" color="inherit">
-            US Adventure Brothers
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
+        </Grid>
+      </Grid>
+
+      <Divider />
+    </Container>
   );
-}
+};

@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export default function Footer() {
+export default () => {
   const classes = useStyles();
 
   return (
@@ -20,7 +20,7 @@ export default function Footer() {
       <CssBaseline />
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
-          <Typography variant="p">
+          <Typography variant="body2">
               All Rights Reserved US Adventure Brothers Copyright 2020
           </Typography>
         </Toolbar>
